@@ -1,5 +1,5 @@
 ﻿namespace AircraftSimulator.Physics.DariaKlochko{
-    public struct DariaKlochkoModelData
+    public struct OlenchukPavelModelData
     {
         public float DeadZone;
         public float ControlRate;
