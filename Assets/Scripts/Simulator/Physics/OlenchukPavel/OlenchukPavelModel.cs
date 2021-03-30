@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 namespace AircraftSimulator.Physics.OlenchukPavel {
     public class OlenchukPavelModel : PhysicsModel {
@@ -41,9 +41,22 @@ namespace AircraftSimulator.Physics.OlenchukPavel {
                     totalPower += (float)engine.CurrentPower;
                 }
             }
-
-            var isForsage = _data.Forsage.IsActive;
-            if (isForsage) totalPower *= 3;
+            
+           var isForsage = _data.Forsage.IsActive;
+            if (isForsage)
+            {   
+                var tpk = totalPower*0.001;
+                int i=1;
+                    
+                 do {
+                     totalPower += (float)tpk;
+                     i++;
+                     
+                    } while (i<3000);   
+                  
+            }
+             
+             
             // evaluate current state
             // this is not physics!!!
             CurrentState.U = 0;
